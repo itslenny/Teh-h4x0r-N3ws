@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
   presence: true
 
   belongs_to :user
+  has_many :votes, as: :votable
 
   def owned_by? user
     user && user.id == self.user.id
